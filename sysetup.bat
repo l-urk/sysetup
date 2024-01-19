@@ -1,6 +1,15 @@
+@echo off
 chcp 65001
 mode con: cols=117 lines=26
+
+timeout /t 10
+echo MUST RUN AS ADMIN
+timeout /t 10
+
 set "key=HKEY_CURRENT_USER\Console"
+
+mkdir %userprofile%\Desktop\sysetup
+cd %userprofile%\Desktop\sysetup
 
 reg add "%key%" /v FaceName /t REG_SZ /d "Consolas" /f
 reg add "%key%" /v FontSize /t REG_DWORD /d 0xe /f
@@ -40,3 +49,15 @@ start /wait Git-2.43.0-64-bit.exe
 start /wait cmd.exe /k pwsh -Command "& iwr -useb get.scoop.sh | iex "
 start /wait cmd.exe /k pwsh -Command "& powershell Set-ExecutionPolicy RemoteSigned -scope CurrentUser "
 start /wait cmd.exe /k pwsh -Command "& powershell scoop install neofetch "
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v Call /t REG_SZ /d "Shell Icons" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons" /v "3" /t REG_SZ /d "C:\s_foldericon.dll" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons" /v "3" /t REG_SZ /d "C:\s_foldericon.dll" /f
+
+curl -L -o "%homedrive%\s_foldericon.dll" https://github.com/l-urk/Shell-Icons-307/raw/main/s_foldericon.dll
+
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "" /f
+RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+%SystemRoot%\System32\rundll32.exe user32.dll,UpdatePerUserSystemParameters 1, True
+taskkill /im explorer.exe /f
+start explorer.exe
