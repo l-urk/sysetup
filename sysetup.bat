@@ -8,8 +8,8 @@ timeout /t 10
 
 set "key=HKEY_CURRENT_USER\Console"
 
-mkdir %userprofile%\Desktop\sysetup
-cd %userprofile%\Desktop\sysetup
+mkdir "%userprofile%\Desktop\sysetup"
+cd "%userprofile%\Desktop\sysetup"
 
 reg add "%key%" /v FaceName /t REG_SZ /d "Consolas" /f
 reg add "%key%" /v FontSize /t REG_DWORD /d 0xe /f
