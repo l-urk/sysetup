@@ -29,7 +29,7 @@ curl -L -O https://github.com/l-urk/Explorer-Patcher-Settings/blob/main/Explorer
 start ep_setup.exe
 
 curl -L -O https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.191/OpenShellSetup_4_4_191.exe
-curl -L -O https://github.com/l-urk/my_openshell_settings/blob/main/Menu%20Settings.xml
+curl -L -O https://raw.githubusercontent.com/l-urk/my_openshell_settings/main/MenuSettings2024.xml
 start /wait OpenShellSetup_4_4_191.exe
 
 curl -L -O https://www.autohotkey.com/download/ahk-v2.exe
