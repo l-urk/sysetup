@@ -14,6 +14,9 @@ cd %userprofile%\Desktop\sysetup
 reg add "%key%" /v FaceName /t REG_SZ /d "Consolas" /f
 reg add "%key%" /v FontSize /t REG_DWORD /d 0xe /f
 
+curl -L -O https://github.com/microsoft/terminal/releases/download/v1.18.3181.0/Microsoft.WindowsTerminal_1.18.3181.0_x64.zip
+tar -xf Microsoft.WindowsTerminal_1.18.3181.0_x64.zip
+
 curl -L -O https://github.com/valinet/Win11DisableRoundedCorners/releases/download/1.0.0.3/Win11DisableOrRestoreRoundedCorners.exe
 start Win11DisableOrRestoreRoundedCorners.exe
 
