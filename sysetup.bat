@@ -25,7 +25,7 @@ taskkill /im explorer.exe /f
 start /wait explorer.exe
 
 curl -L -O https://github.com/valinet/ExplorerPatcher/releases/download/22621.2861.62.2_9b68cc0/ep_setup.exe
-curl -L -O https://github.com/l-urk/Explorer-Patcher-Settings/blob/main/ExplorerPatcher_22621.2861.62.2.reg
+curl -L -O https://raw.githubusercontent.com/l-urk/Explorer-Patcher-Settings/main/ExplorerPatcher_22621.2861.62.2.reg
 start ep_setup.exe
 
 curl -L -O https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.191/OpenShellSetup_4_4_191.exe
